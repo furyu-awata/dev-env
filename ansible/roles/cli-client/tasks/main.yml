@@ -50,8 +50,3 @@
 - name: Install whois
   ansible.builtin.import_tasks: tasks/network/whois.yml
   tags: whois
-
-# runtime manager
-- name: Install mise
-  ansible.builtin.import_tasks: tasks/runtime-manager/mise.yml
-  tags: mise

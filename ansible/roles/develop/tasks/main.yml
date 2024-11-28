@@ -2,3 +2,8 @@
 # security
 - ansible.builtin.import_tasks: tasks/password-manager/git-credencial-helper.yml
   tags: git-helper
+
+# runtime manager
+- name: Install mise
+  ansible.builtin.import_tasks: tasks/runtime-manager/mise.yml
+  tags: mise
