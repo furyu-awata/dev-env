@@ -1,0 +1,4 @@
+---
+# security
+- ansible.builtin.import_tasks: tasks/password-manager/git-credencial-helper.yml
+  tags: git-helper

@@ -1,7 +1,7 @@
 - name: Install mise
-  ansible.builtin.set_fact:
-    packages:
+  become: true
+  ansible.builtin.apt:
+    name:
       - mise
-
-- name: Import installer
-  ansible.builtin.import_tasks: ../apt-install.yml
+    state: present
+    force_apt_get: false

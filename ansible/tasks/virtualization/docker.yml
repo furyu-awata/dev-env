@@ -1,11 +1,11 @@
 ---
 - name: Install docker
-  ansible.builtin.set_fact:
-    packages:
+  become: true
+  ansible.builtin.apt:
+    name:
       - docker-ce
       - docker-ce-cli
       - docker-compose-plugin
       - docker-buildx-plugin
-
-- name: Import installer
-  ansible.builtin.import_tasks: ../apt-install.yml
+    state: present
+    force_apt_get: false
