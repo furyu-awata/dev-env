@@ -1,0 +1,30 @@
+[user]
+	name = 
+	email = 
+[alias]
+	cancel = reset --soft HEAD^
+	co = checkout
+	ci = commit
+	diffs = diff --cached
+	dp = diff --no-prefix
+	dsp = diff --cached --no-prefix
+	svnup = svn rebase --all
+	st = status --short --branch
+	logst = log --name-status
+	lo = log --stat --decorete --fine-renames
+	merged = !git branch --merged | egrep -v \"\\*|master\" | xargs -I % git branch -d %
+	delete-merged-remote-branches = fetch --prune
+	rootdir = rev-parse --show-toplevel
+[color]
+	ui = auto
+[core]
+	autocrlf = false
+	editor = vim
+[push]
+	default = simple
+[credential]
+	helper = /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
+[init]
+	templatedir = ~/.git/template
+[pager]
+	branch = cat
