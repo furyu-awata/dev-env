@@ -4,20 +4,11 @@ import sys
 import json
 import yaml
 import re
-import codecs
 import os
 
-#root_user = 0
 
 def host_vars(host_name, host_json):
     host_var_json = {}
-    # ログインして作業するホストを名前解決できる形式で登録する
-    #if 'domain-name' in host_json:
-    #    host_var_json['ansible_ssh_host'] = host_name + host_json['domain-name']
-    #elif (host_json['environment_name'] != 'operation'):
-    #    host_var_json['ansible_ssh_host'] = host_name + '.e-jumon.com'
-    #else:
-    #    host_var_json['ansible_ssh_host'] = host_name + '.local.furyu.jp'
     # 実行時の環境変数の設定
     host_var_json['locale'] = json.loads('{}')
     host_var_json['locale']['LANG'] = 'C'
@@ -29,10 +20,6 @@ def host_vars(host_name, host_json):
     for env_key in host_json.keys():
         host_var_json[env_key] = host_json[env_key]
     
-    # rootユーザを強制されたときは再上書き
-    #if root_user:
-    #    host_var_json['ansible_ssh_user'] = 'root'
-
     return host_var_json
 
 def set_login_option(result_obj, host_obj):
@@ -110,10 +97,6 @@ def main():
     # 起動名称で処理を分岐するためのフラグ処理
     program_name = re.sub('.*/', '', argv[0])
     env = program_name.split('_')[0]
-    ## _区切りで最後の文字列が 'root' だった時はrootユーザ強制フラグを設定
-    #if len(program_name.split('_')) != 1 and program_name.split('_')[len(program_name.split('_')) -1 ] == 'root':
-    #    global root_user
-    #    root_user = 1
 
     hostlistfile = "inventory/hosts.yml"
     if (os.environ.get('ANSIBLE_HOST_LIST')):
