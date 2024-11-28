@@ -16,10 +16,6 @@
   ansible.builtin.import_tasks: tasks/shell/xpanes.yml
   tags: xpanes
 
-## security
-# - ansible.builtin.import_tasks: tasks/password-manager/git-credencial-helper.yml
-#   tags: git-helper
-
 # locate
 - name: Install locate
   ansible.builtin.import_tasks: tasks/ubuntu/locate.yml
