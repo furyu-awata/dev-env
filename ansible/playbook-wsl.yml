@@ -1,0 +1,11 @@
+---
+- name: サーバ構築
+  become: false
+  vars:
+    company: false
+    gui: false
+    develop: true
+  hosts: all
+  roles:
+    - { role: add-repo, tags: "repo" }
+    - { role: cli-client, tags: "cli" }

@@ -1,0 +1,12 @@
+---
+- name: Copy mise repos
+  become: true
+  ansible.builtin.copy:
+    src: files/{{ item.file }}
+    dest: /etc/apt/{{ item.dest }}/{{ item.file }}
+    owner: root
+    group: root
+    mode: '0644'
+  with_items:
+    - { file: mise-archive-keyring.gpg, dest: keyrings }
+    - { file: mise.list, dest: sources.list.d }

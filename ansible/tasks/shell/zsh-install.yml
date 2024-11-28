@@ -1,0 +1,8 @@
+---
+- name: Install zsh
+  ansible.builtin.set_fact:
+    packages:
+      - zsh
+
+- name: Import installer
+  ansible.builtin.import_tasks: ../apt-install.yml

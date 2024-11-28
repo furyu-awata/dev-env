@@ -1,0 +1,7 @@
+- name: Install mise
+  ansible.builtin.set_fact:
+    packages:
+      - mise
+
+- name: Import installer
+  ansible.builtin.import_tasks: ../apt-install.yml

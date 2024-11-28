@@ -1,0 +1,8 @@
+---
+- name: Install xpanes
+  ansible.builtin.set_fact:
+    packages:
+      - tmux-xpanes
+
+- name: Import installer
+  ansible.builtin.import_tasks: ../apt-install.yml

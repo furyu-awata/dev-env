@@ -1,0 +1,61 @@
+---
+# shell
+- name: Install zsh
+  ansible.builtin.import_tasks: tasks/shell/zsh-install.yml
+  tags: zsh
+
+- name: Install fzf
+  ansible.builtin.import_tasks: tasks/shell/fzf-install.yml
+  tags: fzf
+
+- name: Install source-highlight
+  ansible.builtin.import_tasks: tasks/shell/source-highlight.yml
+  tags: source-highlight
+
+- name: Install xpanes
+  ansible.builtin.import_tasks: tasks/shell/xpanes.yml
+  tags: xpanes
+
+## security
+# - ansible.builtin.import_tasks: tasks/password-manager/git-credencial-helper.yml
+#   tags: git-helper
+
+# locate
+- name: Install locate
+  ansible.builtin.import_tasks: tasks/ubuntu/locate.yml
+  tags: locate
+
+# editor
+- name: Install vim
+  ansible.builtin.import_tasks: tasks/editor/vim-install.yml
+  tags: vim
+
+# chatacter set
+- name: Install nkf
+  ansible.builtin.import_tasks: tasks/character-set/nkf-install.yml
+  tags: nkf
+
+# network
+- name: Install dnsutils
+  ansible.builtin.import_tasks: tasks/network/dnsutils-install.yml
+  tags: dnsutils
+- name: Install net-tools
+  ansible.builtin.import_tasks: tasks/network/net-tools-install.yml
+  tags: net-tools
+- name: Install curl
+  ansible.builtin.import_tasks: tasks/network/curl.yml
+  tags: curl
+- name: Install w3m
+  ansible.builtin.import_tasks: tasks/network/w3m.yml
+  tags: w3m
+- name: Install httpie
+  ansible.builtin.import_tasks: tasks/network/httpie.yml
+  tags: httpie
+- name: Install whois
+  ansible.builtin.import_tasks: tasks/network/whois.yml
+  tags: whois
+
+# runtime manager
+- name: Install mise
+  ansible.builtin.import_tasks: tasks/runtime-manager/mise.yml
+  tags: mise

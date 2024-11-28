@@ -1,0 +1,14 @@
+---
+# - name: add repository
+#   become: yes
+#   apt_repository:
+#     repo: ppa:greymd/tmux-xpanes
+
+- name: Copy xpanes repos
+  become: true
+  ansible.builtin.copy:
+    src: files/greymd-ubuntu-tmux-xpanes-jammy.sources
+    dest: /etc/apt/sources.list.d/greymd-ubuntu-tmux-xpanes-jammy.sources
+    owner: root
+    group: root
+    mode: "0644"

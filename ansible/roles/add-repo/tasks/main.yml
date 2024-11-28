@@ -1,0 +1,27 @@
+---
+# mise
+- name: Import mise
+  ansible.builtin.import_tasks: tasks/runtime-manager/repos/mise.yml
+  tags: mise
+  when: develop is defined and develop | bool
+
+# xpanes
+- name: Import xpanes
+  ansible.builtin.import_tasks: tasks/shell/repos/xpanes.yml
+  tags: xpanes
+  when: develop is defined and develop | bool
+
+# docker
+- name: Import docker
+  ansible.builtin.import_tasks: tasks/virtualization/repos/docker.yml
+  tags: docker
+
+- name: Run apt update
+  become: true
+  ansible.builtin.apt:
+    update_cache: true
+  tags:
+    - mise
+    - vivaldi
+    - xpanes
+    - vscode

@@ -1,0 +1,8 @@
+---
+- name: Install source-highlight
+  ansible.builtin.set_fact:
+    packages:
+      - source-highlight
+
+- name: Import installer
+  ansible.builtin.import_tasks: ../apt-install.yml

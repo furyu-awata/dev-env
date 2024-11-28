@@ -1,0 +1,8 @@
+---
+- name: Install fzf
+  ansible.builtin.set_fact:
+    packages:
+      - fzf
+
+- name: Import installer
+  ansible.builtin.import_tasks: ../apt-install.yml

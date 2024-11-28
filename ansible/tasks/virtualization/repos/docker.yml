@@ -1,0 +1,12 @@
+---
+- name: Add docker repository
+  become: true
+  ansible.builtin.copy:
+    src: files/{{ item.src }}
+    dest: /etc/apt/{{ item.dest }}/{{ item.src }}
+    mode: "0644"
+    owner: root
+    group: root
+  with_items:
+    - { src: docker.gpg, dest: keyrings }
+    - { src: docker.list, dest: sources.list.d }
