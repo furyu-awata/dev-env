@@ -1,0 +1,8 @@
+---
+- name: Install nkf
+  become: true
+  ansible.builtin.apt:
+    name:
+      - nkf
+    state: present
+    force_apt_get: false

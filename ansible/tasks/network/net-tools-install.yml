@@ -1,0 +1,8 @@
+---
+- name: Install net-tools
+  become: true
+  ansible.builtin.apt:
+    name:
+      - net-tools
+    state: present
+    force_apt_get: false

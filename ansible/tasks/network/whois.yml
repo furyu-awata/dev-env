@@ -1,0 +1,8 @@
+---
+- name: Install whois
+  become: true
+  ansible.builtin.apt:
+    name:
+      - whois
+    state: present
+    force_apt_get: false

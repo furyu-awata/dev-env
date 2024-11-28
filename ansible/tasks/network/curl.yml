@@ -1,0 +1,8 @@
+---
+- name: Install curl
+  become: true
+  ansible.builtin.apt:
+    name:
+      - curl
+    state: present
+    force_apt_get: false

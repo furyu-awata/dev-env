@@ -1,0 +1,8 @@
+---
+- name: Install locate
+  become: true
+  ansible.builtin.apt:
+    name:
+      - plocate
+    state: present
+    force_apt_get: false

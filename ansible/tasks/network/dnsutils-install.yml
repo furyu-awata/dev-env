@@ -1,0 +1,9 @@
+---
+- name: Install dnsutils
+  become: true
+  ansible.builtin.apt:
+    name:
+      - dnsutils
+    state: present
+    force_apt_get: false
+

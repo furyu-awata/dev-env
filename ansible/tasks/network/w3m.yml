@@ -1,0 +1,8 @@
+---
+- name: Install w3m
+  become: true
+  ansible.builtin.apt:
+    name:
+      - w3m
+    state: present
+    force_apt_get: false

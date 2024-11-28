@@ -1,0 +1,8 @@
+---
+- name: Install httpie
+  become: true
+  ansible.builtin.apt:
+    name:
+      - httpie
+    state: present
+    force_apt_get: false
