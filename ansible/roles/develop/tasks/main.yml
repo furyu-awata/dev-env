@@ -12,3 +12,8 @@
 - name: Install docker
   ansible.builtin.import_tasks: tasks/virtualization/docker.yml
   tags: docker
+
+# aws ssm
+- name: Install ssm
+  ansible.builtin.import_tasks: tasks/aws/ssm.yml
+  tags: ssm

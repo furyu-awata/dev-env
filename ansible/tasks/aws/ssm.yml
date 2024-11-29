@@ -1,0 +1,6 @@
+---
+- name: Install ssm
+  become: true
+  ansible.builtin.apt:
+    deb: "https://s3.amazonaws.com/session-manager-downloads/plugin/latest/ubuntu_64bit/session-manager-plugin.deb"
+    state: present
