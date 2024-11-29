@@ -13,9 +13,6 @@ def host_vars(host_name, host_json):
     host_var_json['locale'] = json.loads('{}')
     host_var_json['locale']['LANG'] = 'C'
     host_var_json['locale']['LC_ALL'] = 'C'
-    # ユーザ設定は定義ファイルの内容で上書きされる様にする為に、デフォルト値を先に作成してしまう
-    host_var_json['ansible_ssh_user'] = 'awatan'
-    host_var_json['ansible_ssh_private_key_file'] = '~/.ssh/id_rsa'
     # 定義ファイルの設定を取得する
     for env_key in host_json.keys():
         host_var_json[env_key] = host_json[env_key]
