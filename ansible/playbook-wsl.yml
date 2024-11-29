@@ -9,3 +9,4 @@
   roles:
     - { role: add-repo, tags: "repo" }
     - { role: cli-client, tags: "cli" }
+    - { role: develop, tags: "develop" }
