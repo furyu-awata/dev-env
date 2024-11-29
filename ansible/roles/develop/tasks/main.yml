@@ -7,3 +7,8 @@
 - name: Install mise
   ansible.builtin.import_tasks: tasks/runtime-manager/mise.yml
   tags: mise
+
+# docker
+- name: Install docker
+  ansible.builtin.import_tasks: tasks/virtualization/docker.yml
+  tags: docker
