@@ -1,13 +1,7 @@
-# Setup fzf
-# ---------
-if [[ ! "$PATH" == */home/awatan/.fzf/bin* ]]; then
-  PATH="${PATH:+${PATH}:}/home/awatan/.fzf/bin"
-fi
-
 # Auto-completion
 # ---------------
-[[ $- == *i* ]] && source "/home/awatan/.fzf/shell/completion.zsh" 2> /dev/null
+[[ $- == *i* ]] && source "/usr/share/doc/fzf/examples/completion.zsh" 2> /dev/null
 
 # Key bindings
 # ------------
-source "/home/awatan/.fzf/shell/key-bindings.zsh"
+source "/usr/share/doc/fzf/examples/key-bindings.zsh"
